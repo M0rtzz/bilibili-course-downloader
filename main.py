@@ -72,7 +72,6 @@ print("发现课程：" + orign_title)
 print("共检测到" + str(len(ep_list)) + "集视频")
 for ep in ep_list:
     print(f"\n正在下载第{count}集: {ep['title']}")
-
     try:
         ep_url = play_url % (ep["aid"], ep["cid"], ep["id"])
         ep_json = requests.get(ep_url, headers=headers).json()
