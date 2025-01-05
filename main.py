@@ -25,7 +25,6 @@ def mergeAudioVideo(mp4_file, mp3_file, output_file):
         raise Exception("合并失败")
 
 
-print("欢迎使用B站课堂视频下载工具")
 url = input("请输入视频地址：")
 cookie = input("请输入Cookie：")
 
@@ -66,8 +65,9 @@ while os.path.exists(tmp_str):
     tmp_str = title + "（" + str(tmp) + "）"
     tmp += 1
 title = validateTitle(tmp_str)
-os.mkdir(title)
-os.chdir(title)
+dir_path = os.path.join("downloads/", title)
+os.mkdir(dir_path)
+os.chdir(dir_path)
 print("发现课程：" + orign_title)
 print("共检测到" + str(len(ep_list)) + "集视频")
 for ep in ep_list:
