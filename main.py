@@ -57,7 +57,7 @@ headers["Cookie"] = cookie.encode("utf_8").decode("latin1")
 play_url = "https://api.bilibili.com/pugv/player/web/playurl?avid=%s&cid=%s&qn=0&fnver=0&fnval=16&fourk=1&gaia_source=&from_client=BROWSER&is_main_page=true&need_fragment=false&season_id=19591&isGaiaAvoided=false&ep_id=%s&session=ed1c4795e01bf762f6d1dbefc27379ef&voice_balance=1&drm_tech_type=2"
 count = 1
 title = my_json["index"]["viewInfo"]["title"]
-orign_title = title
+origin_title = title
 title = validateTitle(title)
 tmp = 1
 tmp_str = title
@@ -68,7 +68,7 @@ title = validateTitle(tmp_str)
 dir_path = os.path.join("downloads/", title)
 os.mkdir(dir_path)
 os.chdir(dir_path)
-print("发现课程：" + orign_title)
+print("发现课程：" + origin_title)
 print("共检测到" + str(len(ep_list)) + "集视频")
 for ep in ep_list:
     print(f"\n正在下载第{count}集: {ep['title']}")
